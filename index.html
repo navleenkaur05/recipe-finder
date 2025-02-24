@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/RecipeLogo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Express Eat</title>
+</head>
+<body>
+
+    <!--- Navigation Bar -->
+    <div class="header">
+        <nav class="nav-bar">
+            <img src="./img/Logo.png" class="brand-name">
+            <a href="#" class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="menu-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Search Bar -->
+        <div class="title">Find a Recipe</div>
+        <div class="search-wrapper">
+            <div class="fa fa-search"></div>
+            <input type="text" name=""  id="search" placeholder="What do you want to eat?" onkeyup="search()">
+            <div class="fa fa-times" onclick="clearInput()" ></div>
+        </div>
+    </div>
+
+    <!-- Search Results -->
+        <div class="result">
+            <h1>Your Search Result: </h1>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="card-grid" >
+            <div class="food-list" id="food-list">
+                    <p id="none" style="display: none;">Sorry, the food you were looking for was not available.</p>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="dish1.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Strawberry shake </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="getRecipeDetails()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="dish2.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Shahi paneer </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get2ndRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="dish3.jpg">
+                        </div>
+                        <div class="card-body" >
+                            <h3>Dal Makhan</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get3rdRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="dish4.jpg">
+                        </div>
+                        <div class="card-body" >
+                            <h3>Rajma Chawal</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get4thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="dish5.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>chole Bature </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get5thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="dish6.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Dosa </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get6thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="dish7.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3> Lemonade</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get7thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="dish8.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Iddli Sambhar</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get8thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="dish9.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Cold Coffee</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get9thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="dish10.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Sandwich</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get10thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="dish12.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>Spourts</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get11thRecipe()">Get Recipe</button>
+                        </div>
+                    </div>
+                    <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="gulabjanum.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>gulabjanum </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get6thRecipe()">Get Recipe</button>
+                        </div>
+                     </div>
+                     <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="burger.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>burger</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get6thRecipe()">Get Recipe</button>
+                        </div>
+                     </div>
+                     <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="pasta.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>pasta</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get6thRecipe()">Get Recipe</button>
+                        </div>
+                     </div>
+                     <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="palakpaneer.jpg">
+                        </div>
+                        <div class="card-body" >
+                        <h3>palak paneer </h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get6thRecipe()">Get Recipe</button>
+                        </div>
+                     </div>
+                     <div class="card card-shadow">
+                        <div class="card-header card-image">
+                            <img src="pavbhaji.webp">
+                        </div>
+                        <div class="card-body" >
+                        <h3>pav bhaji</h3>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn" onclick="get6thRecipe()">Get Recipe</button>
+                        </div>
+                     </div>
+                     \
+                                   
+                        </div>
+                       
+                      
+            </div> 
+
+            <!--Ending of Main Content-->
+
+            <!--Recipe Details-->
+            <div class = "meal-detail" id="meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Strawberry shake</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">
+                            A strawberry shake is a blended beverage made with strawberries, milk, and ice cream. It is typically sweet, creamy, and served chilled, often topped with whipped cream or additional strawberries for garnish. </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>Fresh Strawberries (or frozen) - 1 cup, hulled
+                            <br>Milk - 1 cup (use whole milk for a creamier shake, or plant-based milk if preferred)
+                            <br>Vanilla Ice Cream - 2-3 scoops (adjust for desired thickness)
+                            <br>Sugar or Sweetener - 1-2 tablespoons (optional, depending on the sweetness of the strawberries)
+                            <br>Ice Cubes (optional) - A few, for extra chill or to adjust thickness
+                           <br><b><u><i>Optional Toppings:</i></u></b>
+                            <br>Whipped Cream
+                            <br>Strawberry Syrup
+                            <br>Fresh Strawberry Slices
+                            <br>Sprinkles
+                        
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br><b><u>Prepare Strawberries:</u></b>
+                            Wash the strawberries and hull them (remove the green tops). If using frozen strawberries, let them thaw slightly for better blending.
+                            <br><b><u>Blend the Shake:</u></b>
+                            Add the strawberries, milk, ice cream, and sugar into a blender. Blend until smooth and creamy. If you'd like a thinner consistency, add a little extra milk.
+                            <br><b><u>Adjust Sweetness and Thickness:</u></b>
+Taste the shake. If it needs more sweetness, add extra sugar or honey and blend again. For a thicker shake, add another scoop of ice cream. For a frostier texture, add ice cubes and blend.
+<br><b><u>Serve:</u></b>
+Pour the shake into glasses. Top with whipped cream, a drizzle of strawberry syrup, and fresh strawberry slices if desired.
+                            <br>
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "dish1.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://youtu.be/Bhxlbe0RExY" class="meal-link-btn">Watch Video</a>
+                    </div>
+                </div>
+            </div>
+            <div class = "second-meal-detail" id="second-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Shahi Paneer</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Shahi Paneer is a rich and flavorful North Indian dish made with paneer (Indian cottage cheese) cooked in a creamy and aromatic tomato-based gravy. The term "Shahi" translates to "royal," reflecting the dish's indulgent and luxurious appeal, often served during special occasions or festive meals.</p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>Paneer: Soft, fresh cubes of Indian cottage cheese
+                            <br>Gravy Base:
+                            Tomatoes,
+                            Onions,
+                            Cashews or almonds (for creaminess),
+                            Fresh cream or yogurt
+                            <br>Spices:
+                            Cumin seeds,
+                            Garam masala,
+                            Coriander powder,
+                            Turmeric powder,
+                            Red chili powder,
+                            Kasuri methi (dried fenugreek leaves)
+                            <br>Aromatic Additions:
+                            Ginger-garlic paste,
+                            Green chilies,
+                            Fresh coriander leaves.
+                            <br>Butter or Ghee: Used for richness and flavor.
+                            
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Base Preparation:
+                            Sauté onions, garlic, ginger, and cashews until golden.,
+                            Blend with tomatoes to form a smooth paste.
+                            <br>2. Cooking the Gravy:
+                            Heat butter or ghee in a pan and add cumin seeds,
+                            Add the prepared paste and cook until oil separates,
+                            Incorporate dry spices like turmeric, chili powder, and garam masala.
+                            
+                            <br>3.Finishing Touches:
+                            Add water or milk to adjust consistency.,
+                            Add paneer cubes and cook briefly to absorb flavors.,
+                            Stir in cream and garnish with kasuri methi and coriander leaves.
+                            <h3>Tips for the Perfect Shahi Paneer:</h3>
+                            <p>
+                                <br>Soak paneer cubes in warm water for a few minutes before adding to the gravy to make them soft.
+                                <br>Adjust spice levels according to your taste.
+                                <br>For a more indulgent flavor, use saffron-infused milk.
+                            </p>
+                            </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "dish2.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://youtu.be/T9hQV22Uezw" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div>  
+            <div class = "third-meal-detail" id="third-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Dal Makhani</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Dal Makhni is a classic dish from North Indian cuisine, particularly associated with Punjabi cooking. It's a rich, creamy, and flavorful preparation made primarily with black lentils (urad dal) and red kidney beans (rajma), slow-cooked with spices, butter (makhan), and cream. It is a staple dish in Indian households and is also a popular choice at restaurants.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>Main Ingredients:
+                            Black lentils (urad dal),
+                            Red kidney beans (rajma).
+                            <br>Base Ingredients:
+                            Onions,
+                            Tomatoes,
+                            Ginger and garlic paste,
+                            Green chilies.
+                            <br>Spices:
+                            Cumin seeds,
+                            Turmeric powder,
+                            Red chili powder,
+                            Garam masala,
+                            Coriander powder.
+                            <br>Richness:
+                            Butter,
+                            Cream,
+                            Kasuri methi (dried fenugreek leaves).
+                            <br>Optional: A pinch of asafoetida (hing) for a distinct aroma.
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1.Soaking and Cooking Lentils:
+                            Soak black lentils and kidney beans overnight or for 6–8 hours.,
+                            Pressure cook them with water, salt, and a pinch of turmeric until soft and mushy.
+                            <br>2.Preparing the Base:
+                            Heat butter in a pan and add cumin seeds.,
+                            Add finely chopped onions and sauté until golden brown.,
+                            Stir in ginger-garlic paste and green chilies; cook until aromatic.
+                          <br> 3. Adding Tomatoes and Spices:
+                            Add pureed tomatoes and cook until the mixture thickens and oil starts separating.,
+                            Mix in turmeric, chili powder, coriander powder, and garam masala.
+                            4.Simmering the Dal:
+                            Add the cooked lentils and beans to the masala base.,
+                            Stir well and simmer on low heat for at least 30–60 minutes for the flavors to meld. Stir occasionally.
+                           <br>5. Finishing Touches:
+                            
+                            Stir in cream and a dollop of butter for a creamy consistency.
+                            Add crushed kasuri methi for a smoky aroma and garnish with fresh coriander leaves.
+                            
+                            </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "dish3.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://youtu.be/o3k55z-tv9I" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div>  
+            <div class = "four-meal-detail" id="four-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Rajma Chawal</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Rajma Chawal is a classic North Indian comfort food that pairs rajma (red kidney beans cooked in a spiced tomato-onion gravy) with chawal (steamed basmati rice). This wholesome and flavorful dish is a staple in many Indian households and is often associated with warmth and nostalgia.
+
+
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>For Rajma (Kidney Beans Curry):
+                            Red kidney beans (rajma), soaked and boiled,
+                            Onions,
+                            Tomatoes (pureed or finely chopped),
+                            Ginger and garlic paste,
+                            Green chilies.
+                            <br>Spices:
+                            Cumin seeds,
+                            Turmeric powder,
+                            Red chili powder,
+                            Coriander powder,
+                            Garam masala,
+                            Kasuri methi (dried fenugreek leaves),
+                            <br>Aromatic Additions:
+                            Bay leaf,
+                            Asafoetida (hing, optional),
+                            Fresh coriander leaves.
+                            <br>For Chawal (Rice):
+                            Basmati rice,
+                            Water,
+                            A pinch of salt.
+                            
+                        </p>
+                        <h3>Instruction:</h3>
+                        <h6>Preparing Rajma:</h6>
+                        <p><br>1.Soak and Boil:
+                            Soak the kidney beans in water for 8–10 hours or overnight.,
+                            Pressure cook them with water, a pinch of salt, and turmeric until they are soft but not mushy.,
+                            <br>2.Prepare the Masala:
+                            Heat oil or ghee in a pan. Add cumin seeds, bay leaf, and asafoetida.,
+                            Sauté finely chopped onions until golden brown.,
+                            Add ginger-garlic paste and cook until fragrant.,
+                            Stir in pureed tomatoes and cook until the mixture thickens and oil separates.
+                            <br>3.Add Spices:
+                            Add turmeric, red chili powder, coriander powder, and salt. Mix well.,
+                            Combine Beans and Gravy:,
+                            Add the boiled kidney beans along with some of their cooking water.,
+                            Let the curry simmer for 15–20 minutes, stirring occasionally.
+                            <br>4.Finishing Touches:
+                            Sprinkle garam masala and crushed kasuri methi.
+                            Garnish with fresh coriander leaves.
+                        <h6>Preparing Chawal (Rice):</h6>
+                        <br>Rinse basmati rice thoroughly and soak for 20–30 minutes.
+                        <br>Boil water with a pinch of salt, add the soaked rice, and cook until done. Drain any excess water.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "dish4.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://youtu.be/M_ncAJhIaIU" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div>  
+            <div class = "five-meal-detail" id="five-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Chole Bhature</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Chole Bhature (also known as Chole Bhatura) is a popular and indulgent North Indian dish, especially enjoyed in Punjabi cuisine. It consists of spicy chickpeas (chole) served with deep-fried bread (bhature). The combination of crispy, fluffy bhature and aromatic, tangy chole makes this dish a beloved choice for breakfast, lunch, or dinner, often served during festive occasions or in restaurants.
+
+                        </p>
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>2 lbs pork belly or buto-buto
+                            <br>1 bunch spinach or kang-kong
+                            <br>3 tablespoons fish sauce
+                            <br>12 pieces string beans sitaw, cut in 2 inch length
+                            <br>2 pieces tomato quartered
+                            <br>3 pieces chili or banana pepper
+                            <br>1 tablespoons cooking oil
+                            <br>2 quarts water
+                            <br>1 piece onion sliced
+                            <br>2 pieces taro gabi, quartered
+                            <br>1 pack sinigang mix good for 2 liters water
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Heat the pot and put-in the cooking oil
+                            <br>2. Sauté the onion until its layers separate from each other
+                            <br>3.Add the pork belly and cook until outer part turns light brown
+                            <br>4. Put-in the fish sauce and mix with the ingredients
+                            <br>5. Pour the water and bring to a boil
+                            <br>6. Add the taro and tomatoes then simmer for 40 minutes or until pork is tender
+                            <br>7. Put-in the sinigang mix and chili
+                            <br>8. Add the string beans (and other vegetables if there are any) and simmer for 5 to 8 minutes
+                            <br>9. Put-in the spinach, turn off the heat, and cover the pot. Let the spinach cook using the remaining heat in the pot.
+                            <br>10. Serve hot. Share and enjoy!
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "dish5.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/ywbcrx4f" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "six-meal-detail" id="six-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Dosa</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Different spring rolls known as "lumpia" are popular in the Philippines and Indonesia. Lumpia are formed of a thin pastry skin, also known as a "lumpia wrapper," that encloses either savory or sweet fillings. It may be either fresh or deep-fried and is frequently served as an appetizer or snack.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>50 pieces lumpia wrapper (Up to you how many pieces)
+                            <br>3 cups cooking oil
+                            <br>1 1/2 lbs ground pork
+                            <br>2 pieces onion minced
+                            <br>2 pieces carrots minced
+                            <br>1 1/2 teaspoons garlic powder
+                            <br>1/2 teaspoon ground black pepper
+                            <br>1/2 cup parsley chopped
+                            <br>1 1/2 teaspoons salt
+                            <br>1 tablespoon sesame oil
+                            <br>2 eggs
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Combine all filling ingredients in a bowl. Mix well.
+                            <br>2. Scoop around 1 to 1 1/2 tablespoons of filling and place over a piece of lumpia wrapper. Spread the filling and then fold both sides of the wrapper. Fold the bottom. Brush beaten egg mixture on the top end of the wrapper. Roll-up until completely wrapped. Perform the same step until all mixture are consumed.
+                            <br>3. Heat oil in a cooking pot. Deep fry lumpia in medium heat until it floats.
+                            <br>4. Remove from the pot. Let excess oil drip. Serve. Share and enjoy
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "dish6.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/2yp63vne" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "seven-meal-detail" id="seven-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Lemonade</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">A chorizo-like Spanish sausage known as longaniza is also closely related to the Portuguese linguiça. Its distinctive qualities are viewed differently in each locale.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>1 ¾ lbs. ground pork
+                            <br>9 tablespoons dark brown sugar
+                            <br>1 tablespoon smoked paprika
+                            <br>3 tablespoons vegetable oil
+                            <br>1 ¼ tablespoons coarse salt
+                            <br>1 teaspoon ground black pepper
+                            <br>2 head garlic
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Peel the skin off the garlic cloves. Crush thoroughly using mortar and pestle. Mince the crushed garlic. Set aside.
+                            <br>2. In a large mixing bowl, combine ground pork along with all of the ingredients. Mix well.
+                            <br>3. Cover the bowl. Refrigerate for 2 hours.
+                            <br>4. Shape the longganisa by laying a sheet of wax paper on a flat surface. Scoop around 3 tablespoons of mixture and put over the wax paper. Fold the wax paper from top to down until the mixture covered. Hold the edge of the paper with your fingers and then slide the card towards the mixture. Push a bit more until a sausage shape is formed. Do this step until the entire mixture is consumed.
+                            <br>5. Refrigerate overnight.
+                            <br>6. Cook and serve for breakfast. Share and enjoy!
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "dish7.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/uxpfxkb4" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "eight-meal-detail" id="eight-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Idli Sambhar</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Prepare the buns! For the ideal stuffing for juicy burgers, coat or marinate chicken thighs and breast. Dig it after adding toppings like slaw and sauce along with your selected side dishes.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>3 boneless chicken breasts (around half a kg)
+                            <br>1 tspn of pepper
+                            <br>1 tspn of salt
+                            <br>2 tblspns of worcestershire sauce
+                            <br>1 tspn of Mustard powder or all spice powder
+                            <br>2 tblspns of Flour
+                            <br>1 Egg
+                            <br>1 1/2 cups of Breadcrumbs
+                            <br>Soft seeded burger buns
+                            <br>Mayonnaise or KFC Zinger Sauce
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. If your chicken breasts are too big, slice them before cooking. Then, marinade the chicken breasts in the Worcestershire sauce, pepper, salt, mustard, or all-spice powder. Leave the chicken for at least four hours or over night.
+                            <br>2. An egg and two tablespoons of water should be beaten together to make the batter, which should then be set aside.
+                            <br>3. Chicken breasts that have been marinated should be heavily dusted in flour. They should be well coated after being dipped in both the egg and the breadcrumbs.
+                            <br>4. The coated chicken breasts should be deep-fried in heated oil over a medium-high heat until they are crisp and golden brown.
+                            <br>5. The finished burger should be stacked with the lettuce on top, followed by the chicken, and then the mayonnaise or KFC zinger sauce. The buns should be cut in half and lightly toasted. If you'd like a cheesy kick, add some sliced American cheese.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "dish8.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="dish8.jpg" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "nine-meal-detail" id="nine-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Cold Coffee</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Popular pork dish in the Philippines is menudo. It is frequently served during events like fiestas. There are many ways to make menudo; some people add hotdog pieces, raisins, pickle bits, and even other seasonings to boost the umami flavors of this stew made of pork and tomatoes. There may be a unique variant in every house, town, or province!
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>1/4 cup cooking oil
+                            <br>2 pcs potatoes, medium sized, cut in cubes
+                            <br>1 pc carrot, medium sized, cut in cubes
+                            <br>6 cloves garlic, minced
+                            <br>1 pc onion, minced
+                            <br>250 grams pork kasim, cut into small cubes
+                            <br>250 grams pork liempo, cut into small cubes
+                            <br>250 grams pork liver, cut in small cubes
+                            <br>1 (250 g) pack tomato sauce
+                            <br>2 pcs Knorr Pork Broth Cube
+                            <br>1 1/2 cups water
+                            <br>1 tsp sugar
+                            <br>ground black pepper to taste
+                            <br>2 tbsp raisins
+                            <br>1 cup cubed red and green bell pepper
+                            <br>Optional: 2 bunches Bok-choi, sliced
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>Let’s begin by sautéing the onion and garlic in hot oil until lightly browned.
+                           <br>Add the pork kasim and liempo next and fry until slightly brown in color before adding the liver. Cook for 2 minutes.
+                           <br>Drop in the Knorr Pork Broth Cubes and give this a nice stir to dissolve completely before adding the tomato sauce, water, sugar and black pepper. Mix this well.
+                           <br>Now, gently place the potatoes and carrots in the pan. Continue to cook over low heat until meat and potatoes are cooked through and the sauce has thickened.
+                           <br>Finally, add raisins and bell peppers and just allow to cook for 2 minutes longer. If you're adding Bok-Choi, add at this point. Here’s a dish that will bring the entire family together. Pork Menudo, just like home, is always close to your heart.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src ="dish9.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/5f558f59" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "ten-meal-detail" id="ten-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Tapsilog</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">If there's one thing that could make a non-morning person scramble out of their bed before noon (your delivery rider calling you doesn't count, by the way), it's the intoxicating smell of sinangag (fried garlic rice), fried egg, and of course, tapa wafting through the air from the kitchen and into your room.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>1 lb. beef sirloin sliced thinly
+                            <br>3 pieces eggs
+                            <br>6 tablespoons cooking oil
+                            <br><b>Tapa marinade</b>
+                            <br>3 tablespoons Knorr Liquid Seasoning
+                            <br>6 cloves crushed garlic
+                            <br>¾ cups pineapple juice
+                            <br>2 tablespoons brown sugar
+                            <br>¼ teaspoon ground white pepper
+                            <br><b>Sinangag</b>
+                            <br>5 cups leftover rice
+                            <br>1 teaspoon salt
+                            <br>5 cloves garlic crushed
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Prepare the tapa by placing the beef in a large bowl. Combine with all the tapa marinade ingredients. Mix well and cover the bowl. Place inside the fridge and marinate overnight.
+                            <br>2. Cook the garlic fried rice (sinangag na kanin) by heating 3 tablespoons cooking oil in a pan. Add crushed garlic. Cook until garlic turns light brown. Add the leftover rice. Stir-fry for 3 minutes.
+                            <br>3. Season with salt. Continue to stir-fry for 3 to 5 minutes. Set aside.
+                            <br>4. Start to cook the tapa. Heat a pan and pour the marinated beef into it, including the marinade. Add ¾ cups water. Let the mixture boil. Cover the pan and continue to cook until the liquid reduces to half. Add 3 tablespoons cooking oil into the mixture. Continue to cook until the liquid completely evaporates. Fry the beef tapa in remaining oil until medium brown. Set aside.
+                            <br>5. Fry the egg by pouring 1 tablespoon oil on a pan. Crack a piece of egg and sprinkle enough salt on top. Cook for 30 seconds. Pour 2 tablespoons water on the side of the pan. Cover and let the water boil. Continue to cook until the egg yolks gets completely cooked by the steam.
+                            <br>6. Arrange the beef tapa, sinangag, and fried egg on a large plate to form Tapsilog. Serve with vinegar as dipping sauce for tapa.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "dish10.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/5xh9wjtw" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            <div class = "eleven-meal-detail" id="four-meal-detail">
+                <!-- recipe close btn -->
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+
+                <!-- recipe details -->
+                <div class="meal-content">
+                    <h2 class="meal-name">Sprouts</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Sprouts are germinated seeds, grains, or legumes that are consumed at an early growth stage. They are packed with nutrients and are often considered a superfood due to their health benefits and versatility in recipes.
+                        </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingridients:</h3>
+                        <p><br>8 strips raw bacon
+                            <br>1 lbs Yukon gold potatoes, diced into bite sized pieces
+                            <br>1 small yellow onion, diced
+                            <br>½ red bell pepper, diced
+                            <br>½ green bell pepper, diced
+                            <br>3 cloves garlic, minced
+                            <br>1 teaspoon cumin
+                            <br>¼ teaspoon chili powder
+                            <br>¼ teaspoon paprika
+                            <br>½ teaspoon black pepper
+                            <br>½ teaspoon coarse salt
+                            <br>4 eggs
+                            <br>¼ cup mozzarella cheese, grated
+                            <br>¼ cup cheddar cheese, grated
+                            <br>Extra virgin olive oil for extra drizzling
+                            <br>Fresh cilantro roughly chopped, thinly sliced chives for garnish
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p><br>1. Preheat oven to 400˚F. Place strips of bacon in a large (at least 10 inch), oven safe skillet. Cook over medium low heat on both sides until cooked through but not yet crispy, about 10 minutes. Remove from heat to a paper towel lined plate and set aside, leaving the bacon grease in the pan. When the bacon is cool enough to handle, roughly dice.
+                            <br>Increase the heat to medium high, add the potatoes, bell pepper, and onion and cook for 7- 8 minutes, stirring frequently, until starting to soften and can be pierced with a fork
+                            <br>Add garlic, cumin, chili powder, paprika, black pepper, and salt. Cook for 1-2 minutes, until garlic is fragrant.
+                            <br>Using a spoon, create 4 to 6 holes (depending on how many eggs you want) in the hash mixture for the eggs. Distribute the cheeses evenly into each hole, and then crack one egg into each hole.
+                            <br>Place in the preheat oven and cook for 8-10 minutes, until egg white is set but the yolk is still runny.
+                            <br>Remove from heat. Sprinkle with cooked bacon. Garnish with fresh ground black pepper, cilantro and chives.
+                        </p>
+                
+                    </div>
+                    <div class = "meal-img">
+                        <img src = "dish12.jpg" alt = "">
+                      </div>
+                      <div class = "meal-link">
+                        <a href="https://tinyurl.com/yz55k3bv" class="meal-link-btn" >Watch Video</a>
+                    </div>
+                </div>
+            </div> 
+            
+            
+        </div>
+            <!--Ending of Recipe Details-->
+
+            <!--Footer-->
+    <div class="footer">
+            <div class="quick-bar">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        <p>Copyright &copy; 2024 Express Eat </p>  
+    </div>
+
+<script src="./assets/index.js"></script>
+</body>
+</html>
